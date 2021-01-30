@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="crm">
+        <description>
+            Persistence unit for Hibernate User Guidess
+        </description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>cn.lilongsha.hibernate.domain.Person</class>
+        <class>cn.lilongsha.hibernate.domain.Phone</class>
+        <class>cn.lilongsha.hibernate.domain.Call</class>
+        <class>cn.lilongsha.hibernate.domain.CreditCardPayment</class>
+        <class>cn.lilongsha.hibernate.domain.WireTransferPayment</class>
+        <class>cn.lilongsha.hibernate.domain.Payment</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
+            <property name="javax.persistence.jdbc.user" value="lilongsha"/>
+            <property name="javax.persistence.jdbc.password" value="xwthnnlkim."/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <property name="hibernate.cache.region.factory_class" value="ehcache"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,4 @@
+rootProject.name = 'Learn_Java'
+include 'Hibernate'
+include 'Ehcache'
+

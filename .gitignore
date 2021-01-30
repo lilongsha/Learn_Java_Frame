@@ -1,0 +1,5 @@
+# Project exclude paths
+/.gradle/
+/Hibernate/build/
+/Hibernate/build/classes/java/main/
+/Hibernate/build/classes/java/test/

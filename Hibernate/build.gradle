@@ -1,0 +1,51 @@
+apply plugin: 'org.hibernate.orm'
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.hibernate:hibernate-gradle-plugin:5.4.27.Final"
+    }
+}
+
+hibernate {
+    enhance {
+        enableLazyInitialization = true
+        enableDirtyTracking = true
+        enableAssociationManagement = true
+    }
+}
+
+group 'cn.lilongsha.hibernate'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.alibaba/fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.75'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.27.Final'
+    /* hibernate with c3p0 */
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0
+    compile group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.4.27.Final'
+    /* hibernate with JCache start */
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-jcache
+    compile group: 'org.hibernate', name: 'hibernate-jcache', version: '5.4.27.Final'
+    /* hibernate with JCache end */
+    /* hibernate with Ehcache start */
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-jcache
+    compile group: 'org.hibernate', name: 'hibernate-ehcache', version: '5.4.27.Final'
+    /* hibernate with Ehcache end */
+}
+
+test {
+    useJUnitPlatform()
+}
